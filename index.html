@@ -366,7 +366,7 @@ b{font-weight:700}
 .serve{max-width:none}
 .baby{position:absolute;left:-70px;top:78px;font-size:52px;z-index:60;transition:left 3.2s linear;pointer-events:none}
 .babybar{pointer-events:none;position:absolute;left:20%;right:20%;top:68px;height:6px;background:var(--line);border-radius:6px;z-index:60;overflow:hidden}
-.babybar i{display:block;height:100%;width:100%;background:var(--bad);transition:width 3.5s linear}
+.babybar i{display:block;height:100%;width:100%;background:var(--bad);transition:width 4s linear}
 
 /* ===== v5 responsive (mobile-first, iPhone 17 Pro 402px) ===== */
 .brandbar{height:44px}
@@ -532,12 +532,12 @@ let SAVE={unlocked:1,best:{}};
 try{const s=JSON.parse(localStorage.getItem('thematGame3'));if(s&&s.best)SAVE=s}catch(e){}
 function persist(){try{localStorage.setItem('thematGame3',JSON.stringify(SAVE))}catch(e){}}
 
-/* tiers (총 기록) — 별 3개 기준 합계 95초 */
+/* tiers (총 기록) — 별 3개 기준 합계 101초 */
 const TIERS=[
- {k:'BLACK',name:'더매트 레전드',max:65,desc:'상위 0.1%의 손놀림'},
- {k:'NAVY',name:'그랜드 마스터',max:80,desc:'조절기와 한 몸'},
- {k:'CHARCOAL',name:'매트 장인',max:95,desc:'전 단계 별 3개 수준'},
- {k:'SILVER',name:'따끈 숙련자',max:125,desc:'이제 좀 익숙해요'},
+ {k:'BLACK',name:'더매트 레전드',max:68,desc:'상위 0.1%의 손놀림'},
+ {k:'NAVY',name:'그랜드 마스터',max:84,desc:'조절기와 한 몸'},
+ {k:'CHARCOAL',name:'매트 장인',max:101,desc:'전 단계 별 3개 수준'},
+ {k:'SILVER',name:'따끈 숙련자',max:130,desc:'이제 좀 익숙해요'},
  {k:'WHITE',name:'매트 새내기',max:Infinity,desc:'첫 겨울 입문'}];
 function tierOf(t){return TIERS.find(x=>t<=x.max)}
 function rangeTxt(i){const x=TIERS[i];return x.max===Infinity?`${TIERS[i-1].max}초 초과`:i===0?`${x.max}초 이내`:`${TIERS[i-1].max}~${x.max}초`}
@@ -607,14 +607,14 @@ const STAGES=[
    ['1~9단 세밀 조절 + 자동 안전','8·9단은 <b>90분 뒤 7단으로 자동 전환</b>돼 과열·저온화상 걱정을 덜어줘요.'],
    ['초절전 설계','겨울 난방비 걱정을 덜도록, 슈퍼싱글 기준 <b>하루 약 85원</b>.']],
    fine:'일 85원은 슈퍼싱글 기준, 하루 8시간 사용 시 주택용 저압 전력 기준 예상 요금으로 제품 크기·사용 환경에 따라 차이가 있을 수 있습니다.'},play:stage2},
- {n:3,name:'모드 마스터',desc:'체질에 맞는 모드 골라주기',goal:22,limit:55,
+ {n:3,name:'모드 마스터',desc:'체질에 맞는 모드 골라주기',goal:25,limit:60,
   how:['추위 많이 탐 → <b>고온선호</b> 모드','더위 많이 탐 → <b>저온선호</b> 모드','찜질 원함 → <b>터보</b> 모드 (단수 조절 없음)','손님 쪽 <b>M 버튼</b>으로 모드 바꾸고 ▲▼로 단계 맞추기'],
   story:{tag:'4가지 모드 · 3cm · M2 원단',title:'체질 따라 고르는 4가지 모드,<br>닿는 순간 포근한 3cm',pts:[
    ['4가지 모드','일반 · 고온선호 · 저온선호 · 터보(찜질). 터보는 <b>약 40분간 최대 출력</b> 후 원래 단계로 돌아가요.'],
    ['3cm 고두께','<b>3D 입체 에어홀 공기층과 고탄성 폼</b>이 체중을 고르게 분산하고 열 손실까지 막아줘요.'],
    ['효성 Micro Miracle M2 원단','항균 99.9% 시험을 거친 초극세 알러지케어 원단. 진드기·미세먼지는 물론 <b>털 박힘</b>까지 막아줘요.'],
    ['스마트 타이머','버튼을 누를 때마다 <b>3→6→9→12→15시간</b>. 설정하지 않아도 15시간 뒤 자동 종료돼요.']]},play:stage3},
- {n:4,name:'분리난방 커플 대작전',desc:'좌우 따로 맞추고 아기 습격 막기',goal:35,limit:50,
+ {n:4,name:'분리난방 커플 대작전',desc:'좌우 따로 맞추고 아기 습격 막기',goal:38,limit:55,
   how:['왼쪽·오른쪽 사람에게 <b>각각</b> 맞춰주기 (모드 힌트 없음)','아기가 기어오면 <b>전원 버튼 1.5초 꾹</b> = 차일드락','잠긴 동안엔 버튼이 안 눌려요. 다시 꾹 눌러 해제','못 막으면 아기가 다 눌러버려요 (+3초)'],
   story:{tag:'분리난방 · 차일드락 · 안전',title:'같이 자도 온도는 따로,<br>아이 방에서도 안심',pts:[
    ['분리난방 조절기','퀸·킹 사이즈는 좌우 <b>온도는 물론 모드까지</b> 따로 설정해요. (슈퍼싱글은 단일 조절)'],
@@ -982,7 +982,7 @@ function stage4(api){
         api.penalty(3,'아기가 버튼을 다 눌러버렸어요');api.hint('다시 맞춰 주세요');api.after(900,()=>b.remove())}};
     if(C.st.locked){api.after(400,()=>end(true));return}
     C.onLock=l=>{if(l)end(true)};
-    api.after(3500,()=>end(C.st.locked));
+    api.after(4000,()=>end(C.st.locked));
   }
   round();
   sv.onclick=()=>{if(!api.live()||busy)return;
